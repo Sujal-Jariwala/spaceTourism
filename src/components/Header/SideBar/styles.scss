@@ -1,0 +1,82 @@
+@use '../../../styles/abstract/colors' as*;
+
+.sidebarMain{
+    position: fixed;
+    display: flex;
+    width: 60%;
+    height: 100dvh;
+    right: 0;
+    background-color: $header-bg;
+    backdrop-filter: blur(30px);
+    margin-top: -2rem;
+    &_components{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 2rem;
+
+        nav{
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 6rem;
+            a{
+                all: unset;
+                position: relative;
+                &.active{
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        height: 100%;
+                        top: -10%;
+                        right: -10px;
+                        width: 2.75px;
+                        background-color: $white;    
+                    }
+                }
+                
+            li{
+                list-style: none;
+                color: $white;
+                font-family: "Barlow Condensed";
+                text-transform: uppercase;
+                display: flex;
+                gap: .75rem;
+                font-weight: 550;
+                font-size: 4.35vw;
+                position: relative;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    height: 0;
+                    top: 50%;
+                    right: -15px;
+                    width: 2.75px;
+                    background-color: $white;
+                    transition: all 400ms ease;
+                }
+                &:hover{
+                    &::after{
+                        height: 100%;
+                        top: 0;
+                    }
+                }
+                span{
+                    letter-spacing: .1rem;
+                    font-weight: 400;
+                }
+                &.active{
+                    position: absolute;
+                    content: '';
+                    height: 100%;
+                    top: 0%;
+                    right: -15px;
+                    width: 2.75px;
+                    background-color: $white;
+
+                }
+            }
+            }
+        }
+    }
+}

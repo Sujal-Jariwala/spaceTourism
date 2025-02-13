@@ -1,0 +1,142 @@
+@use '../../styles/abstract/breakpoints' as*;
+@use '../../styles/abstract/colors' as*;
+
+body{
+    background: url('./background-home-desktop.webp');
+}
+.exploreMain{
+    display: flex;
+    width: 100%;
+    margin-top: 10rem;
+    @include tb{
+        margin-top: 3rem;
+    }
+    @include mb{
+        margin-top: 2rem;
+    }
+    &_components{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 3rem 5rem;
+
+        @include tb{
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
+        @include mb{
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+        .leftSection{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            @include tb{
+                align-items: center;
+                width: auto;
+            }
+            @include mb{
+                align-items: center;
+                width: auto;
+            }
+            h4{
+                color: $blue-300;
+                font-size: 2rem;
+                font-family: "Barlow Condensed";
+                font-weight: 300;
+                text-transform: uppercase;
+                @include mb{
+                    font-size: 5vw;
+                }
+                @include tb{
+                    font-size: 5vw;
+                }
+            }
+            h1{
+                color: $white;
+                font-size: 9rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                font-family: "Bellefair";
+                @include tb{
+                    font-size: 20vw;   
+                }
+                @include mb{
+                    font-size: 20vw;
+                    margin: 1.25rem 0;
+                }
+                
+            }
+            p{
+                color: $blue-300;
+                width: 63%;
+                font-size: 1.06rem;
+                letter-spacing: .4px;
+                line-height: 1.7;
+                font-family: "Barlow Condensed";
+                @include tb{
+                    width: auto;
+                    line-height: 3.75rem;
+                    font-size:5vw;
+                    text-align: center;
+                    margin-top: 1rem;
+                }
+                @include mb{
+                    width: auto;
+                    text-align: center;
+                    font-size: 4.0vw;
+                }
+                
+            }
+
+        }
+        .rightSection{
+            display: flex;
+            align-items: center;
+            .circle{
+                width: 300px;
+                aspect-ratio: 1;
+                background-color: $white;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: box-shadow 300ms ease-in-out;
+                @include tb{
+                    width: 40vw;
+                    margin-top: 5rem;
+                }
+                @include mb{
+                    width: 40vw;
+                    margin-top: 5rem;
+                }
+                p{
+                    font-family: "Bellefair";
+                    text-transform: uppercase;
+                    font-size: 2rem;
+                    @include tb{
+                        font-size: 5vw;
+                    }
+                    @include mb{
+                        font-size: 5vw;
+                    }
+                }
+                &:hover{
+                    cursor: pointer;
+                    box-shadow: 0px 0px 0px 90px rgba(255, 255, 255, 0.3);
+                    @include tb{
+                        box-shadow: 0px 0px 0px 7vw rgba(255, 255, 255, 0.3);
+                    }
+                    @include mb{
+                        box-shadow: 0px 0px 0px 10vw rgba(255, 255, 255, 0.3);
+                    }
+                }
+
+            }
+        }
+    }
+}
+

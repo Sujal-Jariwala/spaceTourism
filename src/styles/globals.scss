@@ -1,0 +1,86 @@
+@forward'./abstract/index';
+@use './abstract/breakpoints' as*;
+
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100dvh;
+    &[data-page="home"]{
+        background: url('../assets/home/background-home-desktop.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include tb{
+            background: url('../assets/home/background-home-tablet.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+    
+        }
+        @include mb{
+            background: url('../assets/home/background-home-mobile.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+    
+        }
+    }
+    &[data-page="destination"]{
+        background: url('../assets/destination/background-destination-desktop.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include tb{
+            background: url('../assets/destination/background-destination-tablet.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        @include mb{
+            background: url('../assets/destination/background-destination-mobile.webp');
+            background-size: cover;
+            background-repeat: no-repeat;    
+        }
+    }
+    &[data-page="technology"]{
+        background: url('../assets/technology/background-technology-desktop.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include tb{
+            background: url('../assets/technology/background-technology-tablet.webp');
+            background-size: cover;
+            background-repeat: no-repeat;                
+        }
+        @include mb{
+            background: url('../assets/technology/background-technology-mobile.webp');
+            background-size: cover;
+            background-repeat: no-repeat;    
+        }
+    }
+    &[data-page="crew"]{
+        background: url('../assets/crew/background-crew-desktop.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @include tb{
+            background: url('../assets/crew/background-crew-tablet.webp');
+            background-size: cover;
+            background-repeat: no-repeat;    
+        }
+        @include mb{
+            background: url('../assets/crew/background-crew-mobile.webp');
+            background-size: cover;
+            background-repeat: no-repeat;    
+        }
+    }
+    main{
+        width: 100%;
+        min-height: 100dvh;
+    }
+}

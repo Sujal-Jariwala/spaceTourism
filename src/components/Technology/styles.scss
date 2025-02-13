@@ -1,0 +1,211 @@
+@use '../../styles/abstract/breakpoints' as*;
+@use '../../styles/abstract/colors' as*;
+
+
+body{
+    background: url('./background-technology-desktop.webp');
+}
+.technologyMain{
+    display: flex;
+    width: 100%;
+
+    &_components{
+        display: flex;
+        width: 100%;
+        gap: 8rem;
+        flex-direction: column;
+        @include tb{
+            gap: 5rem;
+        }
+        @include mb{
+            gap: 4rem;
+        }
+        .container1{
+            display: flex;
+            width: 46%;
+            justify-content: center;
+            @include tb{
+                margin-top: 3rem;
+                width: 56%;
+            }
+            @include mb{
+                width: 100%;
+            }
+            h2{
+                color: $circle-hover;
+                font-family: "Barlow Condensed";
+                font-weight: 550;
+                font-size: 2rem;
+                @include mb{
+                    font-size: 6.5vw;
+                }
+                @include tb{
+                    font-size: 5.5vw;
+                }
+                span{
+                    color: $white;
+                    text-transform: uppercase;
+                    letter-spacing: .15rem;
+                    font-weight: 400;
+                    margin-left: .5rem;
+                }
+            }
+        }
+        .container2{
+            display: flex;
+            @include tb{
+                flex-direction: column-reverse;
+                padding: 2rem;
+            }
+            @include mb{
+                flex-direction: column-reverse;
+            }
+            .leftSection{
+                display: flex;
+                justify-content: center;
+                gap: 4rem;
+                align-items: center;
+                @include tb{
+                    flex-direction: column;
+                }
+                @include mb{
+                    flex-direction: column;
+                    padding: 2rem;
+                }
+                &_content1{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    @include tb{
+                        flex-direction: row;
+                        width: 100%;
+                        justify-content: center;
+                    }
+                    @include mb{
+                        flex-direction: row;
+                        width: 100%;
+                        justify-content: center;
+                    }
+                    button{
+                        border-radius: 100%;
+                        width: 4.25rem;
+                        border: 1px solid $circle-hover;
+                        outline: 0;
+                        aspect-ratio: 1;
+                        font-size: 1.75rem;
+                        font-family: "Bellefair";
+                        font-weight: 550;
+                        background-color: transparent;
+                        color: $white;
+                        transition: background-color 500ms ease, color 500ms ease;
+                        @include tb{
+                            width: 6vw;
+                            font-size: 2.75vw;
+                        }
+                        @include mb{
+                            width: 10vw;
+                            font-size: 3.75vw;
+                        }
+                        &:hover{
+                            cursor: pointer;
+                            background-color: $white;
+                            color: $blue-900;
+                        }
+                        &.active{
+                            background-color: $white;
+                            color: $blue-900;
+                        }
+                    }
+                }
+                &_content2{
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+                    @include tb{
+                        width: 100%;
+                        align-items: center;
+                    }
+                    @include mb{
+                        width: 100%;
+                        align-items: center;
+                    }
+                    h2{
+                        color: $circle-hover;
+                        font-family: "Bellefair";
+                        font-size: 2rem;
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        letter-spacing: .12rem;
+                        @include tb{
+                            font-size: 4.1vw;
+                        }
+                        @include mb{
+                            font-size: 4.75vw;
+                        }
+                    }
+                    span{
+                        color: $white;
+                        font-family: "Bellefair";
+                        text-transform: uppercase;
+                        font-size: 3rem;
+                        margin: 1.25rem 0;
+                        @include tb{
+                            font-size: 6vw;
+                        }
+                        @include mb{
+                            font-size: 8vw;
+                        }
+                    }
+                    p{
+                        color: $blue-300;
+                        line-height: 2rem;
+                        font-size: 1.15rem;
+                        letter-spacing: .1rem;
+                        font-family: "Barlow Condensed";
+                        @include tb{
+                            width: 65%;
+                            font-size: 2.15vw;
+                            text-align: center;
+                        }
+                        @include mb{
+                            width: 95%;
+                            font-size: 3.5vw;
+                            text-align: center;
+                            line-height: 1.4rem;
+                        }
+                    }
+                }
+            }
+            .rightSection{
+                display: flex;
+                width: 80%;
+
+                @include tb{
+                    width: 100%;
+                    justify-content: center;
+                    margin-bottom: 3rem;
+                }
+                @include mb{
+                    width: 100%;
+                    justify-content: center;
+                    margin-bottom: 3rem;
+                }
+                img{
+                    width: 90%;
+                    aspect-ratio: 1;
+                    object-fit: contain;
+                    @include tb{
+                        width: 100%;
+                        aspect-ratio: 0;
+                        object-fit: contain;
+                    }
+                    @include mb{
+                        width: 100%;
+                        aspect-ratio: 0;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+}

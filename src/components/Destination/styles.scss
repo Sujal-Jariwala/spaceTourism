@@ -1,0 +1,250 @@
+@use '../../styles/abstract/breakpoints' as*;
+@use '../../styles/abstract/colors' as*;
+
+
+
+.destinationMain{
+    display: flex;
+    width: 100%;
+    @include tb{
+        margin-top: 2rem;
+    }
+    &_components{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 7rem;
+        @include tb{
+            gap: 3rem;
+            padding: 1.25rem;
+        }
+        @include mb{
+            padding: 2rem;
+        }
+        .container1{
+            display: flex;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            @include mb{
+                width: 100%;
+            }
+            h2{
+                color: $circle-hover;
+                font-family: "Barlow Condensed";
+                font-weight: 550;
+                font-size: 2rem;
+                @include mb{
+                    font-size: 6.5vw;
+                }
+                span{
+                    color: $white;
+                    text-transform: uppercase;
+                    letter-spacing: .15rem;
+                    font-weight: 400;
+                    margin-left: .5rem;
+                }
+            }
+        }
+        .container2{
+            display: flex;
+            @include tb{
+                flex-direction: column;
+            }
+            @include mb{
+                flex-direction: column;
+            }
+            .leftSection{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                @include tb{
+                    margin-bottom: 3rem;
+                }
+                @include mb{
+                    margin-bottom: 3rem;
+                }
+                img{
+                    @include tb{
+                        width: 50vw;
+                    }
+                    @include mb{
+                        width: 50vw;
+                    }
+                }
+            }
+            .rightSection{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                nav{
+                    display: flex;
+                    gap: 2rem;
+                    li{
+                        list-style: none;
+                        text-transform: uppercase;
+                        color: $white;
+                        font-family: "Barlow Condensed";
+                        font-size: 1.45rem;
+                        position: relative;
+                        @include tb{
+                            font-size: 4vw;
+                        }
+                        @include mb{
+                            font-size: 4.25vw;
+                        }
+                        &.active{
+                            &::after{
+                                content: '';
+                                width: 100%;
+                                left: 0%;
+                                top: 120%;
+                                background-color: $white;
+                                height: 2.5px;
+
+                            }
+                        }
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            width: 0;
+                            left: 50%;
+                            top: 120%;
+                            background-color: $white;
+                            height: 2.5px;
+                            transition: width 300ms ease, left 300ms ease;
+                        }
+                        &:hover{
+                            cursor: pointer;
+    
+                            &::after{
+                                width: 100%;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+                h2{
+                    color: $white;
+                    font-size: 6rem;
+                    font-family: "Bellefair";
+                    font-weight: 400;
+                    margin: 1.5rem 0;
+                    text-transform: uppercase;  
+                    @include tb{
+                        font-size: 13vw;
+                    } 
+                    @include mb{
+                        font-size: 12vw;
+                    }
+                }
+                p{
+                    color: $blue-300;
+                    width: 52%;
+                    margin-left: 5.5rem;
+                    letter-spacing: .1rem;
+                    font-family: "Barlow Condensed";
+                    line-height: 1.35rem;
+                    @include tb{
+                        font-size: 1.9vw;
+                        text-align: center;
+                        width: 65%;
+                    }
+                    @include mb{
+                        width: 100%;
+                        text-align: center;
+                        margin-left: 0;
+                    }
+                }
+                hr{
+                    opacity: 25.5%;
+                    width: 50%;
+                    margin-left: 5rem;
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
+                    @include mb{
+                        margin-left: 0;
+                    }
+                }
+                .info{
+                    display: flex;
+                    width: 70%;
+                    margin-left: 4rem;
+                    @include tb{
+                        margin-left: 0rem;
+                    }
+                    @include mb{
+                        margin-left: 0;
+                        flex-direction: column;
+                        gap: 1.25rem;
+                    }
+                    .distance{
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        gap: .5rem;
+                        align-items: center;
+                        @include mb{
+                            justify-content: center;
+                        }
+                        p{
+                            color: $blue-300;
+                            text-transform: uppercase;
+                            @include mb{
+                                width: 100%;
+                                text-align: center;
+                            }
+                        }
+                        span{
+                            text-transform: uppercase;
+                            font-size: 1.75rem;
+                            color: $white;
+                            margin-left: 5.5rem;
+                            font-family: "Bellefair";
+                            @include mb{
+                                margin-left: 0;
+                                font-size: 5vw;
+                            }
+                        }
+                    }
+                    .time{
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        gap: .5rem;
+                        @include tb{
+                            align-items: center;
+                        }
+                        @include mb{
+                            align-items: center;
+                        }
+                        p{
+                            color: $blue-300;
+                            text-transform: uppercase;
+                            @include mb{
+                                width: 100%;
+                                text-align: center;
+                            }
+                        }
+                        span{
+                            text-transform: uppercase;
+                            font-size: 1.75rem;
+                            color: $white;
+                            margin-left: 5.5rem;
+                            font-family: "Bellefair";
+                            
+                            @include mb{
+                                margin-left: 0;
+                                font-size: 5vw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
