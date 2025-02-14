@@ -1,7 +1,7 @@
 import './styles.scss'
 import { useEffect, useState } from 'react'
 import { destinations } from '../../data'
-
+import { motion } from 'motion/react'
 
 
 const Destination = () =>{
@@ -25,7 +25,11 @@ const Destination = () =>{
                     </div>
                     <div className='container2'>
                         <div className='leftSection'>
-                        <img src={currentDestination.images.png} />
+                        <motion.img initial={{rotate:0}} animate={{rotate:360}} transition={{
+                            repeat:Infinity,
+                            duration:25,
+                            ease:'linear'
+                        }} src={currentDestination.images.png} />
                     </div>
                     <div className='rightSection'>
                         <nav>
@@ -37,18 +41,18 @@ const Destination = () =>{
                                 </>
                             ))}
                         </nav>
-                        <h2>{currentDestination.name}</h2>
-                        <p>{currentDestination.desc}</p>
+                        <motion.h2 key={currentDestination.name} initial={{x:155, opacity:0}} animate={{x:0, opacity:1}} transition={{duration:.55, delay:.55}}>{currentDestination.name}</motion.h2>
+                        <motion.p key={currentDestination.desc} initial={{y:100,opacity:0}} animate={{y:0, opacity:1}} transition={{delay:.25, duration:.45}}>{currentDestination.desc}</motion.p>
                         <hr />
                         <div className='info'>
-                            <div className='distance'>
+                            <motion.div key={currentDestination.distance} initial={{y:75, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:.25, duration:.5}} className='distance'>
                                 <p>avg. distance</p>
                                 <span>{currentDestination.distance}</span>
-                            </div>
-                            <div className='time'>
+                            </motion.div>
+                            <motion.div key={currentDestination.travelTime} initial={{y:75, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:.25, duration:.5}}  className='time'>
                                 <p>ext. travel time</p>
                                 <span>{currentDestination.travelTime}</span>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                     </div>

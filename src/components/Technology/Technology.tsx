@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './styles.scss'
 import { technology } from '../../data';
-
+import { motion } from 'motion/react';
 
 const Technology = () =>{
 
@@ -49,11 +49,11 @@ const Technology = () =>{
                             <div className='leftSection_content2'>
                                 <h2>The terminology...</h2>
                                 <span>{currentTech.name}</span>
-                                <p>{currentTech.desc}</p>
+                                <motion.p key={currentTech.desc} initial={{y:50, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:.15, duration:.45}}>{currentTech.desc}</motion.p>
                             </div>
                         </div>
                         <div className='rightSection'>
-                            <img src={isSmallScreen ? currentTech.images.landscape : currentTech.images.portrait} alt={currentTech.name} />
+                            <motion.img key={currentTech.images.portrait} initial={{y:-102, opacity:0}} animate={{y:0, opacity:1}} transition={{delay:.25, duration:.45}} src={isSmallScreen ? currentTech.images.landscape : currentTech.images.portrait} alt={currentTech.name} />
                         </div>
                     </div>
                 </div>

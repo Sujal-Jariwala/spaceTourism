@@ -97,7 +97,7 @@ body{
                         font-weight: 550;
                         background-color: transparent;
                         color: $white;
-                        transition: background-color 500ms ease, color 500ms ease;
+                        transition: background-color 500ms ease, color 500ms ease, transform 500ms ease;
                         @include tb{
                             width: 6vw;
                             font-size: 2.75vw;
@@ -110,6 +110,7 @@ body{
                             cursor: pointer;
                             background-color: $white;
                             color: $blue-900;
+                            transform: scale(120%);
                         }
                         &.active{
                             background-color: $white;

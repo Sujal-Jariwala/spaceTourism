@@ -66,11 +66,13 @@
                     margin-bottom: 3rem;
                 }
                 img{
+                    width: 28vw;
                     @include tb{
                         width: 50vw;
                     }
                     @include mb{
                         width: 50vw;
+                        z-index: -1;
                     }
                 }
             }

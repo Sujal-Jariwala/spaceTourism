@@ -21,6 +21,9 @@ const Header = () =>{
         return()=> window.removeEventListener('resize', handleResize);
 
     },[])
+    useEffect(()=>{
+        isOpen ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'auto'
+    },[isOpen])
     return(
         <>
         <header className='headerMain'>
